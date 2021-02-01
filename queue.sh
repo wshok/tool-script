@@ -1,7 +1,6 @@
 #!/bin/bash
 
-url='https://oapi.dingtalk.com/robot/send?access_token=
-6'
+url='https://oapi.dingtalk.com/robot/send?access_token='
 max=100
 
 for k in email-send-queue order-notice-queue;
