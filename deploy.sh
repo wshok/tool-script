@@ -6,9 +6,8 @@ project=$1
 deploytag=$2
 
 projects=(
-yfos
-iggm
-mmowts
+test1
+test2
 )
 
 if [ $project = "" ]
@@ -97,11 +96,11 @@ echo -e "\e[34m 打包    ---- \e[0m\e[42m 成功 \e[0m"
 
 if [ -e $tarname ]
 then
-    scp -i ~/.ssh/www.pem $tarname www@18.204.211.115:~  >/dev/null
+    scp -i ~/.ssh/www.pem $tarname www@192.168.1.100:~  >/dev/null
 
     echo -e "\e[34m 推送    ---- \e[0m\e[42m 成功 \e[0m"
 
-    ssh -i ~/.ssh/www.pem www@18.204.211.115 >/dev/null 2>&1 << eeooff
+    ssh -i ~/.ssh/www.pem www@192.168.1.100 >/dev/null 2>&1 << eeooff
 
     cd ~
 
