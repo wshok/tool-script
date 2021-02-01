@@ -1,9 +1,9 @@
 #!/bin/sh
 
-db_user="yfos911"
-db_passwd="2YmDM/TPPbiYetul"
+db_user="root"
+db_passwd="123456"
 db_host="localhost"
-db_name="yfos"
+db_name="test"
 
 backup_dir="/home/ec2-user/mysql-backup"
 time="$(date +"%y%m%d%H%M%S")"
