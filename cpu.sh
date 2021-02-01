@@ -17,5 +17,5 @@ freemem=`free -m | grep -i mem| awk '{print int($4/$2*100)}'`
 usecpu=`top -n 1 -d 1 -b | grep Cpu | awk '{print int($2)}'`
 echo "freemem: $freemem, usecpu: $usecpu"
 if [ $freemem -le 20 -o $usecpu -ge 80 ] ;then
-    curl -s -o /dev/null  -d '{"msgtype":"text","text":{"content":"warning：IGGM cpu-used: '$usecpu'%, free-mem: '$freemem'%. "},"at":{"isAtAll":true}}' 'https://oapi.dingtalk.com/robot/send?access_token=0bc0e6c67ed1ea6207cbd65eff058278568c1889c5f7361fb918367d3a703476' -H 'Content-Type: application/json'
+    curl -s -o /dev/null  -d '{"msgtype":"text","text":{"content":"warning：cpu-used: '$usecpu'%, free-mem: '$freemem'%. "},"at":{"isAtAll":true}}' 'https://oapi.dingtalk.com/robot/send?access_token=' -H 'Content-Type: application/json'
 fi
